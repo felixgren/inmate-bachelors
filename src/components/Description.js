@@ -3,19 +3,36 @@ import React from "react";
 const Description = ({ data }) => {
   let name = "No more matches for u";
   let charges = [""];
+  let details = [""];
 
   if (data) {
     name = data.name;
     charges = data.charges;
+    details = data.details;
   }
 
   return (
-    <section class="w-full text-gray-400 bg-gray-900 body-font">
-      <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-        <div class="text-center lg:w-2/3 w-full">
-          <h1 class="title-font sm:text-4xl text-2xl mb-4 font-medium text-white">
+    <section
+      style={{ marginTop: "-46px" }}
+      className="w-full text-gray-400 bg-gray-900 body-font"
+    >
+      <div className="container mx-auto flex px-5 py-16 items-center justify-center flex-col">
+        <div className="text-center lg:w-2/3 w-full">
+          <h1 className="title-font sm:text-4xl text-2xl mb-4 font-medium text-white">
             {name}
           </h1>
+
+          {details.length > 0 && (
+            <ol className="pb-6">
+              {details.map((detail, index) => {
+                return (
+                  <li key={index} className="text-left text-sm py-1">
+                    {detail[0]} - {detail[1]}
+                  </li>
+                );
+              })}
+            </ol>
+          )}
 
           {charges.length > 0 && (
             <ol>
@@ -28,15 +45,6 @@ const Description = ({ data }) => {
               })}
             </ol>
           )}
-
-          <div class="py-8 flex justify-center">
-            <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-              Button
-            </button>
-            <button class="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">
-              Button
-            </button>
-          </div>
         </div>
       </div>
     </section>

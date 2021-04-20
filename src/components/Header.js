@@ -1,6 +1,5 @@
 import React from "react";
 const Header = () => {
-  console.log(window.location.pathname);
   return (
     <div className="relative bg-red-500">
       <div className="absolute inset-x-0 bottom-0">

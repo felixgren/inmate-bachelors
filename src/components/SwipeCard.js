@@ -8,20 +8,18 @@ const SwipeCard = ({ src, index, setActive }) => {
 
   const onCardLeftScreen = (index) => {
     setActive(index + 1);
-    console.log(index + " left the screen");
   };
 
   return (
     <TinderCard
       onSwipe={onSwipe}
       onCardLeftScreen={() => onCardLeftScreen(index)}
-      preventSwipe={["right", "left"]}
     >
       <img
         src={src}
-        className="max-w-screen-sm mx-auto rounded shadow-lg md:w-auto lg:max-w-screen-md"
+        className="rounded shadow-lg"
         alt="Mugshot"
-        style={{ height: "336px" }}
+        style={{ maxWidth: "252px", width: "80vw", height: "336px" }}
       />
     </TinderCard>
   );

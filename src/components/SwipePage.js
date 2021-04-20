@@ -9,11 +9,13 @@ const SwipePage = () => {
   // fetch bachelors
   const fetchBachelors = async () => {
     // const data = await fetch("/api/1/recent/?source_id=az-mcso", {
-    await fetch("/api/1/search/?source_id=az-mcso&last_name=smith", {
+    fetch("/api/1/search/?source_id=az-mcso&last_name=smith", {
       headers: { "Access-Control-Allow-Origin": "*" },
     })
       .then((response) => response.json())
+      // .then((response) => console.log(response.json())
       .then((response) => {
+        console.log(response);
         setBachelors(response.records);
       });
   };
@@ -26,24 +28,16 @@ const SwipePage = () => {
     return null;
   }
 
-  console.log(bachelors);
-
-  console.log(active);
-
   return (
     <div
-      className="flex flex-col items-center justify-center mx-auto sm:max-w-xl md:max-w-full lg:pt-32 md:px-0"
+      className="pt-4 flex flex-col items-center justify-center mx-auto md:max-w-full lg:pt-32 md:px-0"
       style={{ minHeight: "100vh" }}
     >
       <div
-        className="pt-4"
         style={{
-          width: "100%",
+          width: "90vw",
           maxWidth: "252px",
-          height: "300px",
-          // position: "relative",
-          // marginBottom: "290px",
-          // width: "253px",
+          height: "340px",
         }}
       >
         {bachelors.map((bachelor, index) => {
@@ -52,7 +46,6 @@ const SwipePage = () => {
             <div
               key={index}
               style={{
-                // width: "100%",
                 position: "absolute",
                 zIndex: `calc(1000 - ${index})`,
               }}
@@ -62,6 +55,15 @@ const SwipePage = () => {
           );
         })}
       </div>
+
+      {/* <div className="py-8 flex justify-center">
+        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          Button
+        </button>
+        <button className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">
+          Button
+        </button>
+      </div> */}
 
       <Description data={bachelors[active] ? bachelors[active] : null} />
     </div>

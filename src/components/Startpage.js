@@ -60,7 +60,7 @@ const Startpage = (props) => {
         aria-label="Swipe"
         className="flex items-center justify-center text-lg w-30 h-15 md:py-2 p-1 mx-auto text-gray-900 hover:text-deep-purple-accent-400 hover:border-deep-purple-accent-400 duration-300 transform border border-gray-400 rounded-md hover:shadow hover:scale-105 md:hover:scale-110"
       >
-        <p class="mr-5">START SWIPING</p>
+        <p className="mr-5">START SWIPING</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="12"
