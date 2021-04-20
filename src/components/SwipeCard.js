@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import TinderCard from "react-tinder-card";
 
 const SwipeCard = ({ src, index, setActive }) => {
@@ -19,8 +19,9 @@ const SwipeCard = ({ src, index, setActive }) => {
     >
       <img
         src={src}
-        className="w-full max-w-screen-sm mx-auto rounded shadow-2xl md:w-auto lg:max-w-screen-md"
+        className="max-w-screen-sm mx-auto rounded shadow-lg md:w-auto lg:max-w-screen-md"
         alt="Mugshot"
+        style={{ height: "336px" }}
       />
     </TinderCard>
   );
