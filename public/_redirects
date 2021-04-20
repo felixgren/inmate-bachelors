@@ -1,2 +1,2 @@
 /*    /index.html   200
-/api/*  https://www.jailbase.com/:splat  200
+api/*  https://www.jailbase.com/api/:splat  200

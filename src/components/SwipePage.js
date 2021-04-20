@@ -9,17 +9,6 @@ const SwipePage = () => {
 
   console.log(swipe);
 
-  let HEADERS = {
-    "Access-Control-Allow-Headers":
-      "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin",
-    "Content-Type": "application/json", //optional
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Max-Age": "8640",
-  };
-
-  HEADERS["Access-Control-Allow-Origin"] = "*";
-  HEADERS["Vary"] = "Origin";
-
   // fetch bachelors
   const fetchBachelors = async () => {
     // const data = await fetch("/api/1/recent/?source_id=az-mcso", {
@@ -27,6 +16,7 @@ const SwipePage = () => {
       .then((response) => response.json())
       // .then((response) => console.log(response.json())
       .then((response) => {
+        console.log(response);
         setBachelors(response.records);
       });
   };
