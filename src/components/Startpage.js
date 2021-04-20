@@ -27,23 +27,13 @@ const Startpage = (props) => {
           </div>
           <div className="flex items-center space-x-3">
             <a
-              href="/"
-              className="w-32 transition duration-300 hover:shadow-lg"
+              href="https://github.com/felixgren"
+              className="w-28 transition duration-300 hover:shadow-lg"
             >
               <img
-                src="https://kitwind.io/assets/kometa/app-store.png"
-                className="object-cover object-top w-full h-auto mx-auto"
-                alt=""
-              />
-            </a>
-            <a
-              href="/"
-              className="w-32 transition duration-300 hover:shadow-lg"
-            >
-              <img
-                src="https://kitwind.io/assets/kometa/google-play.png"
-                className="object-cover object-top w-full h-auto mx-auto"
-                alt=""
+                src="https://user-images.githubusercontent.com/33127919/115332962-1f2c5780-a199-11eb-92bb-7d2ceae53990.png"
+                className="object-cover object-top w-full h-auto mx-auto border rounded-md"
+                alt="felix github"
               />
             </a>
           </div>
