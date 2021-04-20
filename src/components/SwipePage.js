@@ -12,9 +12,15 @@ const SwipePage = () => {
   // fetch bachelors
   const fetchBachelors = async () => {
     // const data = await fetch("/api/1/recent/?source_id=az-mcso", {
-    await fetch("/api/1/search/?source_id=az-mcso&last_name=smith", {
-      headers: { "Access-Control-Allow-Origin": "*" },
-    })
+    await fetch(
+      "https://www.jailbase.com/api/1/search/?source_id=az-mcso&last_name=smith",
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+        // mode: "*cors",
+      }
+    )
       .then((response) => response.json())
       // .then((response) => console.log(response.json())
       .then((response) => {
