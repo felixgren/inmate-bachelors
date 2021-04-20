@@ -12,11 +12,10 @@ const Startpage = (props) => {
               </p>
             </div>
             <h2 className="font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none max-w-lg mb-6">
-              Everything you
-              <br className="hidden md:block" />
-              imagine{" "}
+              Anything you
+              <br className="hidden md:block" /> imagine{" "}
               <span className="inline-block text-deep-purple-accent-400">
-                can be real
+                could be real
               </span>
             </h2>
             <p className="text-gray-700 text-base md:text-lg">
