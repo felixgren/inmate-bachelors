@@ -1,9 +1,10 @@
 import React from "react";
 import TinderCard from "react-tinder-card";
 
-const SwipeCard = ({ src, index, setActive }) => {
+const SwipeCard = ({ src, index, setActive, setSwipe }) => {
   const onSwipe = (direction) => {
     console.log("You swiped: " + direction);
+    setSwipe(direction);
   };
 
   const onCardLeftScreen = (index) => {

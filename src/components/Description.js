@@ -13,10 +13,10 @@ const Description = ({ data }) => {
 
   return (
     <section
-      style={{ marginTop: "-46px" }}
+      style={{ marginTop: "-130px" }}
       className="w-full text-gray-400 bg-gray-900 body-font"
     >
-      <div className="container mx-auto flex px-5 py-16 items-center justify-center flex-col">
+      <div className="container mx-auto flex px-5 py-36 pb-16 items-center justify-center flex-col">
         <div className="text-center lg:w-2/3 w-full">
           <h1 className="title-font sm:text-4xl text-2xl mb-4 font-medium text-white">
             {name}

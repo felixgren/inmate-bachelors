@@ -5,17 +5,19 @@ import Description from "./Description";
 const SwipePage = () => {
   const [bachelors, setBachelors] = useState([]);
   const [active, setActive] = useState(0);
+  const [swipe, setSwipe] = useState(null);
+
+  console.log(swipe);
 
   // fetch bachelors
   const fetchBachelors = async () => {
     // const data = await fetch("/api/1/recent/?source_id=az-mcso", {
-    fetch("/api/1/search/?source_id=az-mcso&last_name=smith", {
+    await fetch("/api/1/search/?source_id=az-mcso&last_name=smith", {
       headers: { "Access-Control-Allow-Origin": "*" },
     })
       .then((response) => response.json())
       // .then((response) => console.log(response.json())
       .then((response) => {
-        console.log(response);
         setBachelors(response.records);
       });
   };
@@ -50,20 +52,25 @@ const SwipePage = () => {
                 zIndex: `calc(1000 - ${index})`,
               }}
             >
-              <SwipeCard index={index} setActive={setActive} src={largeImg} />
+              <SwipeCard
+                setSwipe={setSwipe}
+                index={index}
+                setActive={setActive}
+                src={largeImg}
+              />
             </div>
           );
         })}
       </div>
 
-      {/* <div className="py-8 flex justify-center">
+      <div style={{ zIndex: "5" }} className="py-4 flex justify-center">
+        <button className="mr-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">
+          Left😐
+        </button>
         <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-          Button
+          Right😍
         </button>
-        <button className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">
-          Button
-        </button>
-      </div> */}
+      </div>
 
       <Description data={bachelors[active] ? bachelors[active] : null} />
     </div>
