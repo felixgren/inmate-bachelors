@@ -9,18 +9,21 @@ const SwipePage = () => {
 
   console.log(swipe);
 
+  let HEADERS = {
+    "Access-Control-Allow-Headers":
+      "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin",
+    "Content-Type": "application/json", //optional
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Max-Age": "8640",
+  };
+
+  HEADERS["Access-Control-Allow-Origin"] = "*";
+  HEADERS["Vary"] = "Origin";
+
   // fetch bachelors
   const fetchBachelors = async () => {
     // const data = await fetch("/api/1/recent/?source_id=az-mcso", {
-    await fetch(
-      "https://www.jailbase.com/api/1/search/?source_id=az-mcso&last_name=smith",
-      {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-        // mode: "*cors",
-      }
-    )
+    await fetch("/api/1/search/?source_id=az-mcso&last_name=smith", {})
       .then((response) => response.json())
       // .then((response) => console.log(response.json())
       .then((response) => {
