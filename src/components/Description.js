@@ -1,7 +1,7 @@
 import React from "react";
 
 const Description = ({ data }) => {
-  let name = "No more matches for u";
+  let name = "No more matches for you";
   let charges = [""];
   let details = [""];
 
@@ -18,7 +18,7 @@ const Description = ({ data }) => {
     >
       <div className="container mx-auto flex px-5 py-36 pb-16 items-center justify-center flex-col">
         <div className="text-center lg:w-2/3 w-full">
-          <h1 className="title-font sm:text-4xl text-2xl mb-4 font-medium text-white">
+          <h1 className="title-font sm:text-4xl select-none text-2xl mb-4 font-medium text-white">
             {name}
           </h1>
 
@@ -26,7 +26,7 @@ const Description = ({ data }) => {
             <ol className="pb-6">
               {details.map((detail, index) => {
                 return (
-                  <li key={index} className="text-left text-sm py-1">
+                  <li key={index} className="text-left select-none text-sm py-1">
                     {detail[0]} - {detail[1]}
                   </li>
                 );

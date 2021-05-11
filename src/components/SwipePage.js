@@ -7,22 +7,12 @@ const SwipePage = () => {
   const [active, setActive] = useState(0);
   const [swipe, setSwipe] = useState(null);
 
-  console.log(swipe);
-
   // fetch bachelors
   const fetchBachelors = async () => {
-    // const data = await fetch("/api/1/recent/?source_id=az-mcso", {
     await fetch(
-      "https://www.jailbase.com/api/1/search/?source_id=az-mcso&last_name=smith",
-      {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-        // mode: "*cors",
-      }
+      "https://fabulous-proxy.herokuapp.com/https://www.jailbase.com/api/1/search/?source_id=az-mcso&last_name=smith",
     )
       .then((response) => response.json())
-      // .then((response) => console.log(response.json())
       .then((response) => {
         setBachelors(response.records);
       });
@@ -38,7 +28,7 @@ const SwipePage = () => {
 
   return (
     <div
-      className="pt-4 flex flex-col items-center justify-center mx-auto md:max-w-full lg:pt-32 md:px-0"
+      className="pt-4 flex flex-col items-center justify-center select-none mx-auto md:max-w-full lg:pt-32 md:px-0"
       style={{ minHeight: "100vh" }}
     >
       <div
